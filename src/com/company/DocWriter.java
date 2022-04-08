@@ -16,16 +16,16 @@ public class DocWriter {
 
         try (PrintWriter pw1 = new PrintWriter(newFileNameDocs + ".txt")) {
             int arrayLength = strings.size();
-            String [] filesToString = new String[arrayLength];
+            String[] filesToString = new String[arrayLength];
             strings.toArray(filesToString);
-            HashMap <String, String> log = new HashMap<>();
-            for (String string: filesToString) {
+            HashMap<String, String> log = new HashMap<>();
+            for (String string : filesToString) {
                 if (string.toCharArray().length == 15
                         && (string.startsWith("docnum")
                         || string.startsWith("contract"))) {
                     String comment = " - верный формат";
                     log.put(string, comment);
-                    pw1.write( string + log.get(string) + "\n");
+                    pw1.write(string + log.get(string) + "\n");
                 } else if (!(string.toCharArray().length == 15)) {
                     String comment = " - менее 15 символов";
                     log.put(string, comment);
@@ -35,7 +35,7 @@ public class DocWriter {
                     String comment = " - не начинается с docnum или contract";
                     log.put(string, comment);
                     pw1.write(string + log.get(string) + "\n");
-                    }
+                }
             }
             System.out.println(log);
 

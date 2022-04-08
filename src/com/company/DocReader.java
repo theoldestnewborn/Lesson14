@@ -26,9 +26,11 @@ public class DocReader {
                 docsList = new HashSet<>();
                 String string = new String(chars);
                 String[] tempArray = string.split("\n");
-                for (int k = 0; k < tempArray.length; k++){
+                for (int k = 0; k < tempArray.length; k++) {
                     if (docsList.contains(tempArray[k])) {
-                    } else { docsList.add(tempArray[k]);}
+                    } else {
+                        docsList.add(tempArray[k]);
+                    }
                 }
             }
         } catch (NullPointerException | IOException e) {

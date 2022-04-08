@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Menu {
 
+
     public static ArrayList<String> filesCollector() {
         System.out.println("Введите названия файлов, 0 - конец списка");
         Scanner scanner = new Scanner(System.in);
